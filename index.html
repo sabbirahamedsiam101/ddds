@@ -5,60 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UDDOG Information</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-         }
-     
-      
-        #info div { 
-            border-radius: 10px;
-            border: 1px solid #ccc; 
-            padding: 15px; 
-            width: 90vw;
-            margin: 10px auto;
-            text-align: center;
-            opacity: 0; /* Initially set opacity to 0 */
-            transition: opacity 0.1s ease-in-out; /* Add a transition effect */
-        }
 
 
-        #ppimg {
-             width: 100px; 
-             height: 100px; 
-            }
+
+/* #info div { 
+    border-radius: 10px;
+    border: 1px solid #ccc; 
+    padding: 15px; 
+    width: 90vw;
+    margin: 10px auto;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.1s ease-in-out; 
+} */
 
 
-        .availability-count { 
-            margin-top: 10vh; 
-            position: fixed;
-            right: 0px;
-            color: white;
-            top: 20px;
-            font-size: 1.4rem;
-            border-radius: 10px 0px 0px 10px;
-            padding: 3px 10px;
-            background-color: black;
-        }
-        
-        .showAllButton {
-             margin-top: 8px; 
-             cursor: pointer; 
-             color: blue; 
-             text-decoration: underline; 
-            }
-         .click-to-copy {
-             cursor: pointer; 
-             color: blue; 
-             text-decoration: underline; 
-            }
+#ppimg {
+     width: 100px; 
+     height: 100px; 
+    }
+
+
+
+
+.showAllButton {
+     margin-top: 8px; 
+     cursor: pointer; 
+     color: blue; 
+     text-decoration: underline; 
+    }
+ .click-to-copy {
+     cursor: pointer; 
+     color: orangered; 
+     text-decoration: underline; 
+     font-family: sans-serif;
+    }
 
 .copy-message {
-    display: none;
-    color: green;
-    margin-top: 5px; /* Adjust the spacing as needed */
+display: none;
+color: green;
+margin-top: 5px; /* Adjust the spacing as needed */
 }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -70,16 +59,18 @@
             <option value="bloodGroup">Blood Group</option>
         </select>
         <label for="infoFilter"></label>
-        <input type="text" id="infoFilter" oninput="filterData()">
+        <input type="text" id="infoFilter" placeholder="Find your details" oninput="filterData()">
         <input type="checkbox" id="availabilityCheckbox" onchange="filterData()">
         <div class="availability-count" id="availabilityCount"></div>
     </div>
-
-    <div id="content" style="display: none;">
+<!-- style="display: none; " -->
+   <main>
+    <div id="content" >
         <div id="info">
             <!-- User information will be displayed here -->
         </div>
     </div>
+   </main>
 
     <script>
         let allInfo = [];
